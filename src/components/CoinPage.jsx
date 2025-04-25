@@ -127,7 +127,7 @@ const CoinPage = () => {
                 <span className='text-sm text-cyan-400/80'>Current Price </span>
                 <span className='text-lg font-bold text-emerald-400'>
                     {currentCurrency.symbol}
-                    {coinDetails.market_data.current_price[currentCurrency.name].toLocaleString()}
+                    {coinDetails?.market_data?.current_price?.[currentCurrency.name]?.toLocaleString() || 'N/A'}
                 </span>
             </div>
             </div>
@@ -137,7 +137,7 @@ const CoinPage = () => {
                 <span className='text-sm text-cyan-400/80'>Market Cap </span>
                 <span className='text-lg font-bold text-emerald-400'>
                     {currentCurrency.symbol}
-                    {coinDetails.market_data.market_cap[currentCurrency.name].toLocaleString()}
+                    {coinDetails?.market_data?.market_cap?.[currentCurrency.name]?.toLocaleString() || 'N/A'}
                 </span>
             </div>
             </div>
@@ -149,7 +149,7 @@ const CoinPage = () => {
                 <div className='flex items-center text-green-400'>
                     <ArrowUp className='w-4 h-4 mr-1'/>
                     {currentCurrency.symbol}
-                    {coinDetails.market_data.high_24h[currentCurrency.name].toLocaleString()}
+                    {coinDetails?.market_data?.high_24h?.[currentCurrency.name]?.toLocaleString() || 'N/A'}
                 </div>
                 </div>
             </div>
@@ -163,7 +163,7 @@ const CoinPage = () => {
                 <div className='flex items-center text-green-400'>
                     <ArrowDown className='w-4 h-4 mr-1'/>
                     {currentCurrency.symbol}
-                    {coinDetails.market_data.low_24h[currentCurrency.name].toLocaleString()}
+                    {coinDetails?.market_data?.low_24h?.[currentCurrency.name]?.toLocaleString() || 'N/A'}
                 </div>
                 </div>
             </div>
@@ -175,7 +175,7 @@ const CoinPage = () => {
             <h3 className='text-sm text-cyan-400/80 mb-2'>Current Price</h3>
             <p className='text-2xl font-bold text-emerald-400'>
             {currentCurrency.symbol}
-            {coinDetails.market_data.current_price[currentCurrency.name].toLocaleString()}
+            {coinDetails?.market_data?.current_price?.[currentCurrency.name]?.toLocaleString() || 'N/A'}
             </p>
             </div>
 
@@ -183,7 +183,7 @@ const CoinPage = () => {
             <h3 className='text-sm text-cyan-400/80 mb-2'>Market Cap</h3>
             <p className='text-2xl font-bold text-emerald-400'>
             {currentCurrency.symbol}
-            {coinDetails.market_data.market_cap[currentCurrency.name].toLocaleString()}
+            {coinDetails?.market_data?.market_cap?.[currentCurrency.name]?.toLocaleString() || 'N/A'}
             </p>
             </div>
 
@@ -193,12 +193,12 @@ const CoinPage = () => {
             <div className='flex items-center text-green-400'>
                     <ArrowUp className='w-4 h-4 mr-1'/>
                     {currentCurrency.symbol}
-                    {coinDetails.market_data.high_24h[currentCurrency.name].toLocaleString()}
+                    {coinDetails?.market_data?.high_24h?.[currentCurrency.name]?.toLocaleString() || 'N/A'}
                 </div>
                 <div className=' flex items-center text-red-400'>
                     <ArrowDown className='w-5 h-5 text-red-400'/>
                     {currentCurrency.symbol}
-                    {coinDetails.market_data.low_24h[currentCurrency.name].toLocaleString()}
+                    {coinDetails?.market_data?.low_24h?.[currentCurrency.name]?.toLocaleString() || 'N/A'}
                 </div>
             </div>
          </div>
@@ -214,7 +214,7 @@ const CoinPage = () => {
             <div className='flex items-center gap-2'>
                 <span className={`text-base md:text-lg ${coinDetails.market_data.price_change_percentage_24h > 0
                    ? 'text-green-400': 'text-red-400' } `}>
-                    {coinDetails.market_data.price_change_percentage_24h.toFixed(2)}%
+                    {coinDetails?.market_data?.price_change_percentage_24h?.toFixed(2) || 'N/A'}%
                 </span>
                
                {coinDetails.market_data.price_change_percentage_24h > 0 ? (
@@ -233,7 +233,7 @@ const CoinPage = () => {
          </span>
          <span className='text-lg md:text-xl text-cyan-400'>
          {currentCurrency.symbol}
-         {coinDetails.market_data.total_volume[currentCurrency.name].toLocaleString()}
+         {coinDetails?.market_data.total_volume?.[currentCurrency.name]?.toLocaleString() || 'N/A'}
          </span>
         </div>
         </div>
